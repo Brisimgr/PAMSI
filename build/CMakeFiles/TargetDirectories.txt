@@ -1,0 +1,3 @@
+/Users/gimlig/Developer/LinkedList/build/CMakeFiles/linkedList.dir
+/Users/gimlig/Developer/LinkedList/build/CMakeFiles/edit_cache.dir
+/Users/gimlig/Developer/LinkedList/build/CMakeFiles/rebuild_cache.dir
