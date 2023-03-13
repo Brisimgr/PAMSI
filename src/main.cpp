@@ -1,5 +1,6 @@
 #include "../inc/linkedList.hh"
 #include"../inc/fileFunctions.hh"
+#include"../inc/stack.hpp"
 
 #include<fstream>
 #include<chrono>
@@ -7,17 +8,18 @@
 int main()
 {
     LinkedList<int>* list = new LinkedList<int>();
+    Stack<int>* stos = new Stack<int>(); 
 
     std::ifstream myFileRead;
     std::ofstream myFileWrite;
     
-    myFileWrite.open("../test.txt");
+    myFileWrite.open("test.txt");
     if(myFileWrite.is_open())
-        generateFile(&myFileWrite, 1000);
+        generateFile(&myFileWrite, 10);
     
     myFileWrite.close();
     
-    myFileRead.open("../test.txt");
+    myFileRead.open("test.txt");
 
     int number;
 
@@ -29,6 +31,7 @@ int main()
         {
             number = readFile<int>(&myFileRead);
             list->addAtTail(number);
+            stos->push(number);
         }
     }
 
@@ -39,9 +42,14 @@ int main()
 
     myFileRead.close();
 
-    delete(list);
+    list->display();
 
-    //list->display();
+    delete(list);
+    int cos = stos->top();
+
+    std::cout << cos << std::endl;
+
+    delete(stos);
 
     return 0;
 }

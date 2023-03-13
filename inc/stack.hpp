@@ -35,7 +35,7 @@ class Stack{
 
 template<typename T>
 Stack<T>::Stack()
-:capacity_{1},top_{0}
+:capacity_(1),top_(0)
 {
     storage_ = new T[capacity_];   
 }
@@ -131,5 +131,5 @@ T Stack<T>::pop()
         if(top_ == capacity_ / 4) resize(capacity_ / 2);
         return value;
     }
-    return T{};
+    return 0;
 }
