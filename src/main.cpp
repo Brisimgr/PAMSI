@@ -25,6 +25,8 @@ int main()
 
     int number;
 
+    std::cout << "Czas dodawania elementow do struktury dla 10000 elementow" << std::endl;
+
     auto begin = std::chrono::high_resolution_clock::now();
 
     if(myFileRead.is_open())
@@ -39,7 +41,7 @@ int main()
     auto end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
 
-    std::cout << "Time list: " << elapsed.count() << "ns" << std::endl;
+    std::cout << "lista: " << elapsed.count() << "ns" << std::endl;
 
     number = 0;
 
@@ -57,7 +59,7 @@ int main()
     auto end2 = std::chrono::high_resolution_clock::now();
     auto elapsed2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end2 - begin2);
 
-    std::cout << "Time stos: " << elapsed2.count() << "ns" << std::endl;
+    std::cout << "stos: " << elapsed2.count() << "ns" << std::endl;
 
     auto begin3 = std::chrono::high_resolution_clock::now();
 
@@ -73,7 +75,7 @@ int main()
     auto end3 = std::chrono::high_resolution_clock::now();
     auto elapsed3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end3 - begin3);
 
-    std::cout << "Time tablica: " << elapsed3.count() << "ns" << std::endl;
+    std::cout << "tablica: " << elapsed3.count() << "ns" << std::endl;
 
     myFileRead.close();
 

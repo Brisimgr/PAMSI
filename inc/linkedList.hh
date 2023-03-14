@@ -3,17 +3,20 @@
 
 #include<iostream>
 
+/* Klasa pojedynczego elementu listy stworzona na szablonie, do przechowywania roznych typow danych */
 template<typename T>
 class Node
 {
     public:
     T val; 
     Node* next;
+    /* Konstruktor tworzy pusty element listy*/
     template<typename Y> Node(): val(NULL), next(NULL) {}
+    /* Konstruktor tworzy element listy o podanej wartosci*/
     template<typename Y> Node(Y v): val(v), next(NULL) {}
 };
 
-
+/* Klasa listy jednokierunkowej stworzona na szablonie, do przechowywania roznych typow danych */
 template<typename T>
 class LinkedList
 {
@@ -21,13 +24,21 @@ class LinkedList
     Node<T>* head;
 
     public:
+    /* Konstruktor listy jednokierunkowej */
     LinkedList(){this->head = NULL;}
+    /* Funkcja, sprawdzająca jak długa jest lista */
     int howLong();
+    /* Funkcja podająca wartosc na podanyum indeksie listy */
     T get(int index);
+    /* Funkcja wyswietlajaca tablice */
     void display();
+    /* Funkcja dodajaca element na poczatek listy */
     void addAtHead(T val);
+    /* Funkcja dodajaca element na koniec listy */
     void addAtTail(T val);
+    /* Funkcja dodajaca element w danym miejscu listy */
     void addAtIndex(int index, T val);
+    /* Funkcja usuwajaca dany element listy */
     void deleteAtIndex(int index);
 };
 

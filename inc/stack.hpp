@@ -1,36 +1,29 @@
 #include <iostream>
 
-
+/* Klasa stosu stworzona na szablonie, do przechowywania roznych typow danych */
 template<typename T>
 class Stack{
 
     private:
-
         int top_;
         int capacity_;
-        T* storage_;
-        
+        T* storage_;   
 
     public:
-
+        /* Konstruktor */
         Stack();
+        /* Dekonstruktor */
         ~Stack();
-
 
         //Funkcja dostepowa do sprawdzania
         int getCapacity()const{return capacity_;}
-
         //Operacje na stosie
         void resize(int const &capacity);
         bool isEmpty()const;
-
         void push(T const &  value);
         T pop();
-
-       
         int size()const{return top_;}
         T top()const;
-     
 };
 
 template<typename T>
