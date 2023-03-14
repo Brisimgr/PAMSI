@@ -11,7 +11,7 @@ INC = inc/
 
 #Creating executable program
 
-start: $(OBJ)main.o $(INC)stack.hpp $(INC)linkedList.hh $(INC)fileFunctions.hh $(INC)table.hh
+start: $(OBJ)main.o $(INC)stack.hpp $(INC)linkedList.hh $(INC)fileFunctions.hh $(INC)table.hh $(INC)queue.hh
 	$(CC) $(OBJ)main.o -o $(APP_NAME)
 
 obj/main.o: $(SRC)main$(EX)
