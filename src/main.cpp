@@ -11,7 +11,7 @@ int main()
 {
     LinkedList<int>* list = new LinkedList<int>();
     Stack<int>* stos = new Stack<int>(); 
-    Table<int>* tablica = new Table<int>();
+    Table<int> tablica;
     Queue* kolejka = new Queue();
 
     std::ifstream myFileRead;
@@ -19,7 +19,7 @@ int main()
     
     myFileWrite.open("test.txt");
     if(myFileWrite.is_open())
-        generateFile(&myFileWrite, 100);
+        generateFile(&myFileWrite, 10);
     
     myFileWrite.close();
     
@@ -38,7 +38,7 @@ int main()
             number = readFile<int>(&myFileRead);
             list->addAtHead(number);
         }
-    }
+    };
 
     auto end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
@@ -70,7 +70,7 @@ int main()
         while(myFileRead.good() == true)
         {
             number = readFile<int>(&myFileRead);
-            tablica->push_back(number);
+            tablica.push_back(number);
         }
     }
 
@@ -95,38 +95,10 @@ int main()
 
     std::cout << "kolejka: " << elapsed4.count() << "ns" << std::endl;
 
-    std::cout << "Czas usuwania elementow" << std::endl;
-
-    auto begin5 = std::chrono::high_resolution_clock::now();
-
-    for(int i = 0; i < list->howLong(); ++i)
-    {
-        list->deleteAtIndex(i);
-    }
-
-    auto end5 = std::chrono::high_resolution_clock::now();
-    auto elapsed5 = std::chrono::duration_cast<std::chrono::nanoseconds>(end5 - begin5);
-
-    std::cout << "lista: " << elapsed5.count() << "ns" << std::endl;
-
-    auto begin6 = std::chrono::high_resolution_clock::now();
-
-    for(int i = 0; i < 100; ++i)
-    {
-        stos->pop();
-    }
-
-    auto end6 = std::chrono::high_resolution_clock::now();
-    auto elapsed6 = std::chrono::duration_cast<std::chrono::nanoseconds>(end6 - begin6);
-
     myFileRead.close();
 
     delete(list);
-
     delete(stos);
-
-    delete(tablica);
-
     delete(kolejka);
 
     return 0;

@@ -16,7 +16,7 @@ class Node
     template<typename Y> Node(Y v): val(v), next(NULL) {}
 };
 
-/* Klasa listy jednokierunkowej stworzona na szablonie, do przechowywania roznych typow danych */
+/* Klasa listy jednokierunkowej stworzon    a na szablonie, do przechowywania roznych typow danych */
 template<typename T>
 class LinkedList
 {
