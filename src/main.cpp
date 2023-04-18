@@ -3,6 +3,7 @@
 #include"../inc/stack.hpp"
 #include"../inc/table.hh"
 #include"../inc/queue.hh"
+#include"../inc/listaSasiedztwa.hh"
 #include<algorithm>
 
 #include<fstream>
